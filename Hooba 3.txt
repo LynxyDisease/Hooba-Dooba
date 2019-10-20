@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	float a, b, c, D, roody, sneakycheeky;
+	cout << "Enter numbers to solve equation <ax^2 + bx + c = 0>:\nEnter number <a>: ";
+	cin >> a;
+	cout << "Enter number <b>: ";
+	cin >> b;
+	cout << "Enter number <c>: ";
+	cin >> c;
+	cout << "Processing . . .\n\n";
+	if (a == 0) {
+		cout << "no roots";
+	}
+	else {
+		if (b == 0) {
+			if (c == 0) { //b == 0 and c == 0
+				cout << "<x> = 0";
+			}
+			else { //b == 0 but c =/= 0
+				sneakycheeky = -(c / a);
+				if (sneakycheeky < 0) { //feel pain
+					cout << "no roots";
+				}
+				else { //feel noisia
+					cout << "There are two roots:\n";
+					cout << "<x1> = " << "-(" << c << " / " << a << ") ^ 0.5 == " << pow(sneakycheeky, 0.5);
+					cout << "\n<x2> = " << "-(" << "-(" << c << " / " << a << ") ^ 0.5) == " << -(pow(sneakycheeky, 0.5));
+				}
+			}
+		}
+		else {
+			if (c == 0) { //b =/= 0 but c == 0
+				cout << "<x> = " << "-(" << b << " / " << a << ") == " << -(b / a);
+			}
+			else { //b =/= 0 and c =/= 0, prepare yourself for unbelivable amount of pain!
+				D = b * b - 4 * a * c;
+				roody = pow(D, 0.5);
+				if (D > 0) {
+					cout << "There are two roots:\n";
+					cout << "<x1> = " << "(" << -b << " + " << D << "^0.5)/" << 2 * a << " == " << (-b + roody) / 2 * a;
+					cout << "\n<x2> = " << "(" << -b << " - " << D << "^0.5)/" << 2 * a << " == " << (-b - roody) / 2 * a;
+				}
+				else if (D == 0) {
+					cout << "<x> = " << "-(" << b << " / " << 2 * a << ") == " << -(b / (2 * a));
+				}
+				else { // D < 0
+					cout << "no roots";
+				}
+			}
+		}
+	}
+}

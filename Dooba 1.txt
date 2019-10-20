@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	float r1, r2, l, h, pi;
+	cout << "Please, enter:\nRad1: ";
+	cin >> r1;
+	cout << "Rad2: ";
+	cin >> r2;
+	cout << "High: ";
+	cin >> h;
+	if (r1 > r2){
+		l = pow((h*h+pow((r1-r2),2)),0.5);
+	}
+	else {
+		l = pow((h*h+pow((r2-r1),2)),0.5);
+	}
+	pi = atan(1) * 4; //pie
+	cout << "\nVobyom: " << (1/3.) * pi * h* (r1 * r1 + r1 * r2 + r2 * r2);
+	cout << "\nSpoverhnost: " << pi * (r1 * r1 + (r1 + r2) * l + r2 * r2);
+}

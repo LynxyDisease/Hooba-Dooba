@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	float b, c;
+	cout << "Enter numbers to solve equation <bx + c = 0>:\nEnter number <b>: ";
+	cin >> b;
+	cout << "Enter number <c>: ";
+	cin >> c;
+	cout << "Processing . . .\n\n";
+	if (b == 0) {
+		if (c == 0) { //b == 0 and c == 0
+			cout << "<x> = (infinity ; infinity).";
+		}
+		else { //b == 0 but c =/= 0
+			cout << "The equation has no solutions.";
+		}}
+	else {
+		if (c == 0) { //b =/= 0 but c == 0
+			cout << "<x> = 0";
+		}
+		else { //b =/= 0 and c =/= 0
+			cout << "<x> = " << -c / b;
+		}
+	}
+}

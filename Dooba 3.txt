@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	double x, y, b;
+	cout << "Please, enter:\nx: ";
+	cin >> x;
+	cout << "y: ";
+	cin >> y;
+	cout << "b: ";
+	cin >> b;
+	cout << "\nZ = " << log(b-y) / log(pow((b-x),0.5)) << " or " << log(b-y) * pow((b-x),0.5);
+}
